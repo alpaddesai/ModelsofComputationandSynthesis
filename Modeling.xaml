@@ -1,0 +1,214 @@
+﻿<Window x:Class="ModelsofComputationandSynthesis.Modeling"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ModelsofComputationandSynthesis"
+        mc:Ignorable="d"
+        Title="Modeling" Height="632.045" Width="1231.819" MaxWidth="1232" MaxHeight="632">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="0"/>
+            <GradientStop Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid Margin="0,0,73,5">
+        <RichTextBox HorizontalAlignment="Left" Height="573" Margin="12,7,-62,0" VerticalAlignment="Top" Width="1201" TextChanged="RichTextBox_TextChanged" FontSize="10">
+            <FlowDocument>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="Models of Computation (MoCs) and design languages provide the foundation for defining system behavior and models throughout the design flow.    The most common model of computation is an imperative model written in C and C++.  The program statements are composed into concurrent blocks that communicate through signals to exchange sequences of values and events.  The so called synchronous languages follows an approach where concurrency and ordering is specified in the code instead of relying on extracted or underlying scheduling of operations. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Process-based model"/>
+                    </Span>
+                    <Span>
+                        <Run Text=": Process based MoCs represents computation as a set of concurrent processes.   The overall system is modeled as a set of blocks of code that execute in parallel and are generally independent of each other.   The various processed based MoCs vary in semantics of communication that is supported to exchange data and establish dependencies. Low-level and implementation-oriented thread-based models are built on shared memory and shared variable semantics to explicitly synchronize access to shared resources.  "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="Definitions of concurrency and communication in process based models translate into properties such as deadlocks and determinism.  Deadlocks can arise if there is a circular dependency between two or more processes where each process holds an exclusive resource that the sequential one in the chain is waiting for.  Deadlocks can be prevented or avoided by statically ensuring that chains can never occur or by dynamically breaking them at runtime.  "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="Determinism is related to the outputs of a model for a given set of inputs. For a given deterministic model the same inputs will produce the exact same results. If it is non-deterministic its behavior at least for some inputs will be un-known. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Process Networks: S"/>
+                    </Span>
+                    <Span>
+                        <Run Text="pecialized process-based MoCs have been proposed that provide deterministic properties on a global scale and allow the non-deterministic execution of individual processes.  This can only be achieved if the order of process execution cannot affect overall behavior of the system.   The Kahn Process Network (KPN) processes are allowed to communicate via unidirectional and point-to-point asynchronous message passing channels where messages (also called tokens) are of arbitrary type.  Channels are unbounded where sender do not block and receivers always block until a message is available.   Within the processor the sequence of channel accesses is predetermined and processes cannot change their behavior depending on the order in which data arrives on their inputs.    The behavior of the overall system is deterministic and does not depend on the order in which processes are scheduled."/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="In a KPN process, the chosen scheduling strategy will have an impact on properties such as completeness or memory requirements.  "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Dataflow: "/>
+                    </Span>
+                    <Span>
+                        <Run Text="The KPNs require both dynamic scheduling with runtime context switching and dynamic memory allocation.  Demand driven scheduling prioritizes boundedness over completeness.   The dataflow models map into concepts of block diagrams with continuous streaming of data from inputs to outputs. As a result they are used in the signal processing domain and as the basis for many commercial tools such as Lab View and Simulink.   The synchronous data flow (SDF) models have been widely adopted.  "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="System Design Languages: "/>
+                    </Span>
+                    <Span>
+                        <Run Text=" The MoC can be represented in a variety of languages ranging from C/ C++ to SystemC. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Netlist and Schematics:"/>
+                    </Span>
+                    <Span>
+                        <Run Text="  Netlist models are the basis for describing block diagrams in early tools for computer aided schematic entry and editing.  "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Hardware Description Languages"/>
+                    </Span>
+                    <Span>
+                        <Run Text=":  After capturing netlists and schematics, interest rose in representing not only the structure of designs but also their design behavior.  In the early states, the ideas were applied to the description of hardware blocks at the gate level and later were transferred to the register transfer level (RTL) .  The design is described in the micro-architecture which consists of functional and storage units connected by wires at the RT level.  Each RT component such as a register or an ALU will consist of logic gates while its behavior is inherently modeled in the form of Boolean expressions. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="For simulation of HDL models, a so called discrete event simulator maintains a logical simulated time and a queue of events ordered by their time stamps, the execution of these events is triggered. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontStyle="Italic" FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontStyle="Italic" FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="System Modeling "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="The system design is the process of going from a high level system specification of the desired functionality to a system implementation at the RT or instruction-set level.   "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontStyle="Italic" FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontStyle="Italic" FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="Design Process  "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="In each design step, a refinement tool takes the input model and implements a set of design decisions in order to generate an output model at the next lower level of abstraction.  In the process tools, insert a new layer of computation that reflects and represents the given decisions. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontStyle="Italic" FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="Processor Modeling "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="The computation processes of the system behavioral model are mapped onto processors. Each processor runs a piece of application code, these can be general purpose processors or customizable Application Specific Integrated Processors (ASIPs) down to the fully custom hardware units.     At the specification level, the application is modeled as a network of communicating processes.  In the case of a SW processor the application processes runs on top of the operating system and provides dynamic scheduling and multi-tasking services.    This application and OS software has to run on top of the actual processor hardware which realizes physical bus interfaces and interrupts for communication with the external world. The hardware abstraction layer (HAL) provides interfaces such bus drivers and interrupt service routines (ISRs) for accessing the processor hardware from the software side.    "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontStyle="Italic" FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="Application Layer"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="To achieve the required simulation speeds, the application model is executed on the event driven SLDL simulation kernel which is running natively on the simulation host. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontStyle="Italic" FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="Operating System Layer "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="In the application layer, computation processes are modeled as running concurrently. However the processors can execute a single thread of control or a limited number of threads at any given time.    Hence the operating system layer introduces scheduling of parallel processes on the inherently sequential processors.   "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="In a second step, the remaining tasks are then considered to be dynamically scheduled during runtime by a (RTOS) Real –Time Operating System.  An abstracted model of the RTOS is inserted into the processor's operating system layer.  In the process, tasks are refined to run on top of the OS model by inserting the necessary OS calls for task management (creation and deletion), synchronization (event handling) and timing (delay modeling). "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="The goal of high level RTOS modeling is to provide a solution that combines the speed of native application.     Key modeling concepts are related to multi-tasking, preemption, interrupt handling and inter-process communication and synchronization.    Functionality of the OS model is as follows: tasks and services are not allowed to access the simulation kernel directly. The OS model's functionality includes selectively relaying calls to the kernel and ensuring that at any given time only one task is active and all other tasks are blocked at the SLDL level. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontStyle="Italic" FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="Hardware Abstraction Layer (HAL)"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="The hardware abstraction layer provides the lowest level of functionality that can be implemented in software.   This will include hardware specific driver code to transfer arbitrary blocks of bytes over the processor bus interface. The HAL contains templates of low-level interrupt handlers that are associated with corresponding HW interrupt sources."/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontStyle="Italic" FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="Hardware Layer"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="With the final hardware layer an accurate model of the actual processor hardware is included.  In relation to its external bus interfaces, the HW layer provides two different levels of communication detail.  The bus functional model (BFM) extends the processor hardware layer by including a cycle accurate model of external bus and interrupt protocols. The bus functional processor models are accurate for system integration and hardware synthesis. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontStyle="Italic" FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="Communication Modeling "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="The OSI/ISO model divides the functionality required to implement any network layer into seven different layers. Other modes of communication include buses for serial, point to point or network oriented busses such as RS232, CAN, Ethernet or wireless protocols.  In the OSI model the application layer provides the designer with high level programming model for describing the system behavior.  Commonly used communication methodologies include (a) one-way synchronization (control flow) (b) Shared variables which holds data and does not include synchronization (c) Synchronous and asynchronous message passing channels (d) Queues (e) Complex and user –defined channels with extended semantics. The presentation layer is responsible for formatting of data and for conversion of abstract data types found in the application into un-typed blocks of bytes to be transferred over the network. The session layer is responsible for selecting the end-to-end channel used to transport messages of each application stream and to implement all the necessary means to separate messages of different streams over a single transport.  The network layer spits the overall network into smaller subnets where different subnets can be implemented using different underlying media. Transducers synchronize and exchange address and data items with each side.   Part of the transport layer implementation is the selection of the maximum packet size.  Link layer provides logical links for point-to-point packet transfers between adjacent stations of the network. The stream layer multiplexes different data stream over an underlying shared medium. The media access (MAC) layer is the first layer to provide an immediate abstraction of the shared underlying medium. The protocol layer provides services to transfer groups of bits over the actual bus."/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontStyle="Italic" FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="System Models"/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="Various system models include Network TLM, protocol TLM, Bus cycle accurate model and cycle accurate model."/>
+                    </Span>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Window>

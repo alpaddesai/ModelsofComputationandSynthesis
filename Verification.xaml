@@ -1,0 +1,165 @@
+﻿<Window x:Class="ModelsofComputationandSynthesis.Verification"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ModelsofComputationandSynthesis"
+        mc:Ignorable="d"
+        Title="Verification" Height="523.363" Width="1195.091" MaxHeight="523" MaxWidth="1195">
+    <Grid Margin="0,0,0,1">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <RichTextBox HorizontalAlignment="Left" Height="472" Margin="28,3,0,0" VerticalAlignment="Top" Width="1150" TextChanged="RichTextBox_TextChanged" FontSize="10">
+            <FlowDocument>
+                <Paragraph BorderBrush="Black" BorderThickness="0,0,0,1" FontWeight="Bold" FontFamily="Times New Roman" Margin="0,13.33,0,0" Padding="1.33" TextAlignment="Left">
+                    <Run FontFamily="Cambria" Text="CHAPTER 7 VERIFICATION"/>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="The techniques for verifying design models can be classified into two groups: simulation based models and formal methods. In formal verification methods a specified property is statically checked instead of an instance of a property. Hence this means that the property will be confirmed under all specified inputs.  Types of formal verification include equivalence checking, model checking and theorem proving.  In equivalence checking a mathematical transformation is applied, in model checking the implementation is a state transition and the specification is a set of properties.   Each property in the specification is checked by traversing all the states in the transition system.  Theorem proving methods deduces the equivalence of formulas of the specification model and the implementation model to a given mathematical logic.   Techniques like assertion based verification are used to complement the traditional simulation and debugging of design models.  In contrast the second form of verification which is simulation allows designers a high degree of independence in writing models."/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Simulation based methods: "/>
+                    </Span>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Span>
+                        <Run Text="  Simulation is the most widely used method to verify system models, the stimuli is applied to the DUT's inputs. These inputs then trigger a series of events and computations to the DUT model. A typical simulation environment consists of Specifications, Simulators, Stimulus, Device-Under-Test and Monitors.  "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Test bench: "/>
+                    </Span>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Span>
+                        <Run Text=" The stimuli and monitor for a verification effort can be created from a high level specification of the DUT.  The paired stimulus and corresponding monitor are also called a test-case.  The part of the device under test (DUT) is called its simulation coverage. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Coverage: "/>
+                    </Span>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Span>
+                        <Run Text=" We can use statement coverage to see how many lines of code were visited during a verification run. If during simulation with a given test-case, 100 statements out of 1000 statements in the design were executed  the statement coverage for the test case is 10%.  However not all possible scenarios of the statement is executed.  "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="Coverage is limited to the given property and model representation. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Performance improvements: "/>
+                    </Span>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Span>
+                        <Run Text=" The simulation performance can be improved by selecting test cases that maximize coverage with minimal simulation runs. Another strategy is to improve simulation performance "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Stimulus optimization:  "/>
+                    </Span>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Span>
+                        <Run Text=" Generate only valid test vectors that focus on the scenarios that the design is constrained to work for.  The constraints specified in the property lead to a set of legal inputs that form the test pattern.  The test generation tool can identify these pragmas and produce tests based on them.   Pragmas are properties that are embedded in the design model with special comments.  "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Monitor optimization: "/>
+                    </Span>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Span>
+                        <Run Text=" Monitoring only primary outputs of a design during simulation lets us know if a bug exists however tracing the bug to its source can be difficult for complex designs.  If the source code of the model is available then assertions can be placed on internal variables or signals in the model. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontStyle="Italic" FontFamily="Calibri" Margin="0" TextAlignment="Left"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Speed up Techniques: "/>
+                    </Span>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Span>
+                        <Run Text=" Overall simulation time can be reduced by simply increasing the simulation speed.  The two common speedup techniques are cycle simulation and emulation.  Cycle simulation is used when we are concerned about the signal and variable values only at the clock boundaries, hence the signal values are updated at the clock boundaries only.   In contrast emulation or event driven simulation keeps track of all events even those between clock edges and is thus much slower.  A third speedup technique is the use of reconfigurable hardware to implement the DUT.  The FPGA can be hardwired in the system for rapid prototyping this is called in-circuit simulation."/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Left"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Modeling Techniques: "/>
+                    </Span>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Span>
+                        <Run Text="Abstract level models can reduce functional verification time. The abstract level model removes unnecessary implementation details and hence simulates quicker. There are numerous abstract models including functional specification model, platform model and transaction level model. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Formal Verification Methods: "/>
+                    </Span>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Span>
+                        <Run Text="  These techniques use mathematical formulations to verify designs. The key difference from simulation based verification is the absence of a test pattern.   "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Comparative Analysis of Verification Methods: "/>
+                    </Span>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Run Text=" "/>
+                    <Span>
+                        <Run Text="  The three most common metrics for determining a verification method is coverage, cost and scalability.  Coverage of a verification method determines how much of the design functionality as been tested.  Scalability refers to the limitations on the size or type of design that is being verified.   "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="Coverage provided by formal methods is higher than simulation methods over the same run time.    However model checking has the disadvantage of poor scalability and theorem proving is very expensive which makes equivalence checking the most commonly used techniques in the industry.  Assertion based techniques replace pseudo random simulation since they offer better coverage.   A system level design methodology starts with a well defined executable specification model that serves as a golden reference.  "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph>
+                    <Run/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Window>

@@ -1,0 +1,88 @@
+﻿<Window x:Class="ModelsofComputationandSynthesis.SystemDesignSynthesis"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ModelsofComputationandSynthesis"
+        mc:Ignorable="d"
+        Title="SystemDesignSynthesis" Height="620.773" Width="1169.091" MaxWidth="1169" MaxHeight="621">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="0"/>
+            <GradientStop Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid MaxWidth="1161" MaxHeight="590">
+        <RichTextBox HorizontalAlignment="Left" Height="555" Margin="28,24,0,0" VerticalAlignment="Top" Width="1117" TextChanged="RichTextBox_TextChanged">
+            <FlowDocument>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Span>
+                        <Run Text="These are custom to products and are very product oriented. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Bottom up methodology"/>
+                    </Span>
+                    <Span>
+                        <Run Text=":  The abstraction levels are separated within it's own library.  Each group supplies a component library for the next level of abstraction.  The disadvantage of this approach is that the libraries must include all possible variations for metrics for future applications.   This becomes extremely difficult to predict and can become recursive very quickly. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Top down methodology"/>
+                    </Span>
+                    <Span>
+                        <Run Text=":   Completes the overview of the design first. Hence it does not initiate component or system layout until the entire design is completed.   The disadvantage of the top-down methodology is that it is very difficult to optimize the entire design.  The design decomposition/synthesis is repeated and causes further inefficiencies for designers.  Hence it becomes very difficult to achieve metric disclosure since metric estimations can be difficult. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Meet-in-the middle methodology"/>
+                    </Span>
+                    <Span>
+                        <Run Text=":    Most designers utilize the meet-in-the middle methodology to take advantage of both methodologies and minimize disadvantages displayed by both methodologies.  The methodology that is described in the textbook appears to be iterative where the physical design or layout is conducted 2-3 times.  Hence this approach has the drawback of requiring designers to do layout more than once, hence system optimizations can be very difficult for the RTL components.   "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Platform methodology: "/>
+                    </Span>
+                    <Span>
+                        <Run Text="The system design is usually initiated with an already defined platform.  Such platforms have standard components such as memories and standard processors with well defined layouts.   To optimize the design one can utilize standard templates for standard processor components and then custom components can be inserted for application optimization.     The platform methodology can be upgraded to a system level methodology by the introduction of standard architecture cells and re-targetable compilers.  Standard architecture cells can be pre-synthesized with standard cells and inserted into the library of processor components.   The platform methodology with the two highest abstraction layers are well-suited for application experts with minimal knowledge of system and processor design.    It also utilizes a re-targetable compiler to cover different architecture cells. "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="FPGA methodology: "/>
+                    </Span>
+                    <Span>
+                        <Run Text="This uses a top-down methodology on both system and processor levels.  It is difficult to optimize the entire design once completed."/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0" TextAlignment="Justify"/>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="System level synthesis"/>
+                    </Span>
+                    <Span>
+                        <Run Text=":  This starts with an application written in some model of computation (MoC) that must be executed on a platform of multiple standard and custom processors connected to an arbitrary network.  Hence this type of platform is defined partially or completely after estimating some characteristics of application in terms of performance, cost, power utilization, configurability and other considerations.  "/>
+                    </Span>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0" TextAlignment="Justify">
+                    <Span FontStyle="Italic">
+                        <Run Text="Processor synthesis: "/>
+                    </Span>
+                    <Span>
+                        <Run Text=" On the processor level, the components are synthesized as standard processors, custom processors and custom HW units called Intellectual Property (IPs).    The standard and custom processors are defined by their instruction sets.  Custom processors can also be defined by the algorithm or the programming language code that they execute.  The custom processors are programmable so that new algorithms and code can be added.  Custom HW units or IP are usually not programmable, they are used as accelerators to execute special functions for a specific application such as multimedia applications.        The process of synthesis starts with a given specification in a programming language which is compiled into some tool model such as CDFG or FSMD or a three-address code.  This formal model can be used for estimation of future processor architecture and its metrics along with partial or complete allocation, binding and scheduling.  Processor synthesis is called High Level Synthesis (HLS)."/>
+                    </Span>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Window>
