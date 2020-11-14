@@ -24,3 +24,4 @@ C:\Users\ADG\source\repos\ModelsofComputationandSynthesis\ModelsofComputationand
 C:\Users\ADG\source\repos\ModelsofComputationandSynthesis\ModelsofComputationandSynthesis\obj\Debug\ModelsofComputationandSynthesis.csproj.CoreCompileInputs.cache
 C:\Users\ADG\source\repos\ModelsofComputationandSynthesis\ModelsofComputationandSynthesis\obj\Debug\ModelsofComputationandSynthesis.exe
 C:\Users\ADG\source\repos\ModelsofComputationandSynthesis\ModelsofComputationandSynthesis\obj\Debug\ModelsofComputationandSynthesis.pdb
+C:\Users\ADG\source\repos\ModelsofComputationandSynthesis\ModelsofComputationandSynthesis\obj\Debug\ModelsofComputationandSynthesis.csprojAssemblyReference.cache
