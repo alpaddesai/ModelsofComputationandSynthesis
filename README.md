@@ -1,4 +1,4 @@
-# ModelsofComputationandSynthesis
+# Models of Computation and Synthesis
 
 The project consists of an overview of Models of Computation and Synthesis. For details launch the executable from https://github.com/alpaddesai/ModelsofComputationandSynthesis/releases
 
