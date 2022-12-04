@@ -29,4 +29,4 @@ All images are either custom by Alpa D Desai or a reference name is included. Mo
 
 ![image](Ethics.jpg)
 
-https://github.com/alpaddesai/SystemsEngineering
+Additional details reference https://github.com/alpaddesai/SoftwareEngineering2022
